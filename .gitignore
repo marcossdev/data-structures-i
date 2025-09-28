@@ -1,0 +1,6 @@
+# Folders
+**/output
+
+# Files
+.editorconfig
+.clang-format
