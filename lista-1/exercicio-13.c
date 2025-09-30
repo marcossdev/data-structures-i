@@ -8,7 +8,7 @@
 #include <stdio.h>
 
 int main() {
-    int n, idx, value, maior = INT_MIN, menor = INT_MAX, soma = 0, media_divisor = 0;
+    int n, idx, value, maior, menor, soma = 0, media_divisor = 0;
     float media = 0.0;
 
     printf("Insira um valor inteiro para repedir 'n' vezes: ");
@@ -18,18 +18,19 @@ int main() {
         printf("Insira um valor inteiro: ");
         scanf(" %d", &value);
 
-        if (value > 0) {
-            soma += value;
-            media_divisor += 1;
-
-            if (value > maior) {
-                maior = value;
-            }
-
-            if (value < menor) {
-                menor = value;
-            }
+        if (!idx) {
+            maior = menor = value;
+            continue;
         }
+
+        if (value <= 0)
+            continue;
+
+        soma += value;
+        media_divisor += 1;
+
+        maior = value > maior ? value : maior;
+        menor = value < menor ? value : menor;
     }
 
     printf("Os números válidos são os números maiores que 0.\n");

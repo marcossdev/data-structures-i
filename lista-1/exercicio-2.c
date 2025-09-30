@@ -19,7 +19,7 @@ int main() {
     printf("Soma: %d\n", x + y);
     printf("Subtração: %d\n", x - y);
     printf("Multiplicação: %d\n", x * y);
-    printf("Divisão: %.2f\n", x / y);
+    printf("Divisão: %.2f\n", (float)x / y);
 
     // Letra b
     printf("Quadrado da subtração do primeiro pelo segundo: %d\n", (x - y) * (x - y));

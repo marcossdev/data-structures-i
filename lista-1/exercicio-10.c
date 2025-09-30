@@ -3,13 +3,11 @@
     o maior valor lido, o menor valor e a média simples dos valores inseridos.
 */
 
-#include <limits.h>
 #include <stdio.h>
 
 int main() {
-    int value, idx;
+    int value, idx, soma, max, min;
     float media = 0.0;
-    int max = INT_MIN, min = INT_MAX;
 
     for (idx = 0; idx < 10; idx++) {
         printf("Insira um número inteiro: ");
@@ -22,15 +20,18 @@ int main() {
             continue;
         }
 
-        media += value;
+        soma += value;
 
-        if (value > max)
-            max = value;
-        if (value < min)
-            min = value;
+        if (!idx) {
+            max = min = value;
+            continue;
+        }
+
+        max = value > max ? value : max;
+        min = value < min ? value : min;
     }
 
-    media = (float)media / (float)idx;
+    media = (float)soma / idx;
 
     printf("Maior número: %d\n", max);
     printf("Menor número: %d\n", min);

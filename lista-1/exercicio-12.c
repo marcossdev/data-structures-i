@@ -30,10 +30,9 @@ int main() {
 
     int start = (a < b) ? a : b;
     int end = (b < a) ? a : b;
-    int idx;
 
     printf("Valores entre %d e %d: \n", start, end);
-    for (idx = start + 1; idx < end; idx++) {
+    for (int idx = start + 1; idx < end; idx++) {
         printf("%d\n", idx);
     }
 
