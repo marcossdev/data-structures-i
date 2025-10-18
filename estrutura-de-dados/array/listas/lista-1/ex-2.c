@@ -1,12 +1,11 @@
 /*
-Um apostador joga um dado para o ar N vezes (N definido pelo usuário). Sabendo que um
-dado possui 6 faces, faça um programa que simula o experimento. Como resultado,
-imprima quantas vezes que cada face (não quais faces) caiu para cima e o % de cada face.
+ * Um apostador joga um dado para o ar N vezes (N definido pelo usuário). Sabendo que um 
+ * dado possui 6 faces, faça um programa que simula o experimento. Como resultado, 
+ * imprima quantas vezes que cada face (não quais faces) caiu para cima e o % de cada face.
 */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <time.h>
 
 int main() {

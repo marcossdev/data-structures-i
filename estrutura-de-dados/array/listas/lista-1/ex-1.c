@@ -1,8 +1,8 @@
 /*
-Para um conjunto de dados (array) de 100 valores aleatórios sorteados entre 1 e 20, faça
-um programa que peça ao usuário um valor X e imprima todos os números da base de
-dados e quantas vezes o valor X aparece nele (Marque o símbolo * ao lado de cada
-aparição do valor X). Repita toda operação para o mesmo conjunto de dados até X <= 0.
+ * Para um conjunto de dados (array) de 100 valores aleatórios sorteados entre 1 e 20, faça 
+ * um programa que peça ao usuário um valor X e imprima todos os números da base de
+ * dados e quantas vezes o valor X aparece nele (Marque o símbolo * ao lado de cada
+ * aparição do valor X). Repita toda operação para o mesmo conjunto de dados até X <= 0.
 */
 
 #include <stdio.h>
