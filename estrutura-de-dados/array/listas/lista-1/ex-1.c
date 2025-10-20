@@ -32,7 +32,9 @@ int main() {
         }
 
         printf("\n");
+
         int array_size = 10;
+
         for (int l = 0; l < 10; l++) {
             for (int idx = array_size - 10; idx < array_size; idx++) {
                 int valueFromArray = nums[idx];
