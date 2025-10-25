@@ -64,8 +64,6 @@ int main() {
                     verificador += digito;
             }
 
-            printf(" %i\n", verificador);
-
             if (verificador % 10 == 0) {
                 printf("Cartão de Credito válido!\n");
             } else {
