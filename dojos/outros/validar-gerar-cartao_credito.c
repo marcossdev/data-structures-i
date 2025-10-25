@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 int main() {
@@ -28,10 +29,7 @@ int main() {
 
             // Validação da entrada de dados
             // - Validação da quantidade de digitos do cartão
-            int tamanho_cartao_inserido = 0;
-            while (cartao[tamanho_cartao_inserido] != '\0') {
-                tamanho_cartao_inserido++;
-            }
+            int tamanho_cartao_inserido = strlen(cartao);
             if (tamanho_cartao_inserido != tamanho_cartao) {
                 printf("\nO Cartão de Credito deve conter 16 digitos!\n");
                 printf("\nPressione ENTER para continuar...");
@@ -60,11 +58,13 @@ int main() {
             verificador = 0;
             for (int i = 0; i < tamanho_cartao; i++) {
                 int digito = (cartao[i] - '0');
-                if (i % 2 == 0)
-                    verificador += digito >= 10 ? (digito / 10) + (digito % 10) : digito % 10;
-                else
+                if (i % 2 == 0) {
+                    verificador += digito * 2 >= 10 ? (digito * 2 / 10) + (digito * 2 % 10) : digito * 2;
+                } else
                     verificador += digito;
             }
+
+            printf(" %i\n", verificador);
 
             if (verificador % 10 == 0) {
                 printf("Cartão de Credito válido!\n");
@@ -83,7 +83,7 @@ int main() {
             for (int i = 0; i < indice_final; i++) {
                 int digito = (cartao[i] - '0');
                 if (i % 2 == 0)
-                    verificador += digito >= 10 ? (digito / 10) + (digito % 10) : digito % 10;
+                    verificador += digito * 2 >= 10 ? (digito * 2 / 10) + (digito * 2 % 10) : digito * 2 % 10;
                 else
                     verificador += digito;
             }
@@ -98,7 +98,7 @@ int main() {
             for (int i = 0; i < tamanho_cartao; i++) {
                 int digito = (cartao[i] - '0');
                 if (i % 2 == 0)
-                    verificador += digito >= 10 ? (digito / 10) + (digito % 10) : digito % 10;
+                    verificador += digito * 2 >= 10 ? (digito * 2 / 10) + (digito * 2 % 10) : digito * 2 % 10;
                 else
                     verificador += digito;
             }
