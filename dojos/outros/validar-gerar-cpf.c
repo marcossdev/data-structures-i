@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 int main() {
@@ -27,11 +28,8 @@ int main() {
             scanf(" %[^\n]s", cpf);
 
             // Verficação da entrada de dados
-            int tamanho = 0;
-            while (cpf[tamanho] != '\0') {
-                tamanho++;
-            }
-            if (tamanho != tamanho_cpf) {
+            int tamanho_cpf_inserido = strlen(cpf);
+            if (tamanho_cpf_inserido != tamanho_cpf) {
                 printf("\nO CPF deve conter 11 digitos!\n");
                 printf("\nPressione ENTER para continuar...");
                 while (getchar() != '\n') {};
