@@ -1,6 +1,6 @@
-# Folders
 **/output
-
-# Files
+__backup
+.vscode
 .editorconfig
 .clang-format
+
