@@ -25,7 +25,7 @@ int main() {
         system("clear");
         switch (interface()) {
             case 1:
-                if (cont > MAX_DB_SIZE) {
+                if (cont == MAX_DB_SIZE) {
                     printf("O cadastro de pessoas atingiu o volume máximo.\n");
                     break;
                 }
@@ -37,8 +37,11 @@ int main() {
             case 3:
                 listar(pessoas, cont);
                 break;
-            default:
+            case 0:
                 return 0;
+            default:
+                printf("\nERRO: Opção inválida.\n");
+                break;
         }
 
         printf("\nPressione ENTER para continuar...\n");
@@ -52,6 +55,7 @@ int interface() {
     printf("1 - Cadastrar Pessoa\n");
     printf("2 - Ordenar Pessoas\n");
     printf("3 - Listar Pessoas\n");
+    printf("0 - Encerrar\n");
     input(INT, "Opção Desejada: ", &op);
     return op;
 }
@@ -70,7 +74,7 @@ void cadastrar(Pessoa pessoas[], int* indice) {
 
 void listar(Pessoa pessoas[], int tamanho) {
     if (!tamanho) {
-        printf("\nINFO: Nenhuma pessoa cadastrada\n");
+        printf("\nINFO: Nenhuma pessoa cadastrada.\n");
         return;
     }
 
@@ -83,7 +87,7 @@ void listar(Pessoa pessoas[], int tamanho) {
 
 void ordenar(Pessoa pessoas[], int tamanho) {
     if (!tamanho) {
-        printf("\nINFO: Nenhuma pessoa cadastrada\n");
+        printf("\nINFO: Nenhuma pessoa cadastrada.\n");
         return;
     }
 
@@ -92,12 +96,12 @@ void ordenar(Pessoa pessoas[], int tamanho) {
         Pessoa key = pessoas[i];
 
         // Ordenação por ordem alfabética
-        while (j >= 0 && strcmp(pessoas[j].nome, key.nome) > 1) {
+        while (j >= 0 && strcmp(pessoas[j].nome, key.nome) > 0) {
             pessoas[j + 1] = pessoas[j];
             j--;
         }
         pessoas[j + 1] = key;
     }
 
-    printf("\nINDO: Ordenado com sucesso.\n");
+    printf("\nINFO: Ordenado com sucesso.\n");
 }
