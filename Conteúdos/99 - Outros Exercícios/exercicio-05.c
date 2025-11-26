@@ -45,7 +45,7 @@ int main() {
         }
 
         printf("\nPressione ENTER para continuar...\n");
-        getchar();
+        while (getchar() != '\n') {};
     }
     return 0;
 }
